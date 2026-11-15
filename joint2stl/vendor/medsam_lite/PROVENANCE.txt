@@ -1,0 +1,3 @@
+Source: https://github.com/bowang-lab/MedSAM/tree/LiteMedSAM
+Commit: b0fab476e54e631dd412b25e0db9fdf2a2b0f54c
+Only inference model layers are included. Original copyright headers and Apache-2.0 LICENSE are retained. No training or demo scripts execute on import.

@@ -1,0 +1,81 @@
+{
+  "source_repository": "https://github.com/mazurowski-lab/SegmentAnyBone",
+  "source_commit": "782b22140c17913317cbbbbf392deda14cfbbe4a",
+  "distribution_license": "CC BY-NC 4.0",
+  "upstream_notices": "Original SAM/Meta and TinyViT/Microsoft copyright headers retained. Upstream Apache-2.0 and MIT notices retained separately.",
+  "adaptation": "Only the binary vit_t architecture; no cfg, global module registration, downloads, demos, image IO, MONAI or TorchIO. attention_fusion retained for strict checkpoint compatibility but not invoked without the separate VNet.",
+  "files": [
+    {
+      "file": "common.py",
+      "source": "https://raw.githubusercontent.com/mazurowski-lab/SegmentAnyBone/782b22140c17913317cbbbbf392deda14cfbbe4a/models/sam/modeling/common.py",
+      "upstream_sha256": "0b0b005441d75ff155d78d0a23b6add9931397dc6c8baad00de85aa327f7d1df",
+      "retained_classes": "all inference classes",
+      "changes": "Unused classes/imports and TinyViT registry/download code removed; timm.layers import modernized. Inference parameter shapes and names retained."
+    },
+    {
+      "file": "transformer.py",
+      "source": "https://raw.githubusercontent.com/mazurowski-lab/SegmentAnyBone/782b22140c17913317cbbbbf392deda14cfbbe4a/models/sam/modeling/transformer.py",
+      "upstream_sha256": "0bd20c4a6568f0ed9e9f61c6bff8026af53246dd67c3f13a1b0158f5ba32fec0",
+      "retained_classes": "all inference classes",
+      "changes": "Unused classes/imports and TinyViT registry/download code removed; timm.layers import modernized. Inference parameter shapes and names retained."
+    },
+    {
+      "file": "tiny_vit_sam.py",
+      "source": "https://raw.githubusercontent.com/mazurowski-lab/SegmentAnyBone/782b22140c17913317cbbbbf392deda14cfbbe4a/models/sam/modeling/tiny_vit_sam.py",
+      "upstream_sha256": "c7420a23d4005a08b2b27fe6c3741c1114b9b62214e9ee6458024ff601363443",
+      "retained_classes": "all inference classes",
+      "changes": "Unused classes/imports and TinyViT registry/download code removed; timm.layers import modernized. Inference parameter shapes and names retained."
+    },
+    {
+      "file": "prompt_encoder.py",
+      "source": "https://raw.githubusercontent.com/mazurowski-lab/SegmentAnyBone/782b22140c17913317cbbbbf392deda14cfbbe4a/models/sam/modeling/prompt_encoder.py",
+      "upstream_sha256": "885045a4935119edda08fd861df9d7eb764fde8334a94794539c3b43b39ed0e1",
+      "retained_classes": [
+        "PositionEmbeddingRandom",
+        "PromptEncoder",
+        "attention_fusion"
+      ],
+      "changes": "Unused classes/imports and TinyViT registry/download code removed; timm.layers import modernized. Inference parameter shapes and names retained."
+    },
+    {
+      "file": "mask_decoder.py",
+      "source": "https://raw.githubusercontent.com/mazurowski-lab/SegmentAnyBone/782b22140c17913317cbbbbf392deda14cfbbe4a/models/sam/modeling/mask_decoder.py",
+      "upstream_sha256": "ac86ace7612aab775b0a176e27b0a218b13509f84248447f1f49cbcc1b078c08",
+      "retained_classes": [
+        "MLP",
+        "MaskDecoder"
+      ],
+      "changes": "Unused classes/imports and TinyViT registry/download code removed; timm.layers import modernized. Inference parameter shapes and names retained."
+    }
+  ],
+  "trained_configuration": {
+    "if_encoder_adapter": true,
+    "encoder_adapter_depths": [
+      0,
+      1,
+      10,
+      11
+    ],
+    "if_mask_decoder_adapter": true,
+    "decoder_adapt_depth": 2,
+    "num_multimask_outputs": 2,
+    "attention_fusion": "retained as required by all528 checkpoint keys; not called on single-checkpoint slice inference"
+  },
+  "architecture_source": "https://github.com/mazurowski-lab/SegmentAnyBone/blob/782b22140c17913317cbbbbf392deda14cfbbe4a/models/sam/build_sam.py",
+  "configuration_source": "https://github.com/mazurowski-lab/SegmentAnyBone/blob/782b22140c17913317cbbbbf392deda14cfbbe4a/demo.ipynb",
+  "local_adaptations": {
+    "build.py": "Explicit private SimpleNamespace, exact trained adapters and attention_fusion; no cfg, generic SAM imports, weight download or global registration.",
+    "prompt_encoder.py": "Only attention_fusion, PromptEncoder and PositionEmbeddingRandom retained.",
+    "mask_decoder.py": "Only MaskDecoder and MLP retained, excluding unused SmallDecoder/einops/vit.",
+    "tiny_vit_sam.py": "Unused pretrained model registry/download helpers removed; timm import uses timm.layers."
+  },
+  "vendored_python_sha256": {
+    "__init__.py": "29a8b346f722e67bf320cd4f3885aba68abc95c6950bb4f20d838ffd382afdda",
+    "build.py": "3287ec4eb91dcaf4063ae048be535f6fdc52e0c3272a0f58404939c1da72251e",
+    "common.py": "0b0b005441d75ff155d78d0a23b6add9931397dc6c8baad00de85aa327f7d1df",
+    "mask_decoder.py": "3f75c853b0bf788e1d6d9c09b51252f6da521078153147da5eacc5c4bf528ebd",
+    "prompt_encoder.py": "c42fdee291947ea155f191adf7c9de491efe4229d5245a938dd2e1585c8e3987",
+    "tiny_vit_sam.py": "2c8727dd2d6f2d84ed31c8a95d9d14d55b644b002efed6f600970df9fee98d88",
+    "transformer.py": "0bd20c4a6568f0ed9e9f61c6bff8026af53246dd67c3f13a1b0158f5ba32fec0"
+  }
+}

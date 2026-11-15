@@ -1,0 +1,12 @@
+{
+  "model_url": "https://huggingface.co/spaces/halleewong/ScribblePrompt/resolve/706d6559618e5f1104565a6a19c9ea069fca7454/checkpoints/ScribblePrompt_unet_v1_nf192_res128.pt",
+  "bytes": 15977486,
+  "sha256": "43f57ee8fa8ec529c31be281e06749f9e629b30157bbbcc9baf200cddec1acbe",
+  "network_source_commit": "182c44975f77749b559974ce8db558c8bde57788",
+  "license_url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/LICENSE",
+  "clinical_data_sent": false,
+  "purpose": "local evaluation of positive/negative prompt corrections; no named ligament semantics claimed",
+  "modifications": [
+    "Network architecture retained unchanged. Local wrapper adds verified tensor-only loading, MPS routing, native MRI crop mapping and ownership checks."
+  ]
+}

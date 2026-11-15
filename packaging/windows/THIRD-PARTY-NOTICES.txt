@@ -1,0 +1,5 @@
+Joint2STL 0.4.4 | Third-party notices
+
+The packaged CPython license is in runtime\LICENSE.txt. Python package licenses and metadata are in runtime\Lib\site-packages\*.dist-info (including Qt for Python, VTK, PyTorch, CuPy and the NVIDIA CUDA libraries). PySide6 and the other dependencies remain dynamically loaded and separately installed under the application directory.
+
+Model provenance and checkpoint checksums are in app\models\*.json. Upstream notices and terms are in app\joint2stl\vendor. SegmentAnyBone uses CC BY-NC 4.0; LiteMedSAM and ScribblePrompt retain the corresponding upstream notices. This private installer incorporates the provided components with their terms intact. It contains no patient data.

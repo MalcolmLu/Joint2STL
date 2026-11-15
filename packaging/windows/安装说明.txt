@@ -1,0 +1,8 @@
+Joint2STL 0.4.4 | Windows x64 离线安装
+
+1. 双击 Joint2STL-0.4.4-Windows-x64-Setup.exe，按向导安装。默认装到当前用户的本地应用目录：%LOCALAPPDATA%\Programs\Joint2STL。可在安装时选择创建桌面快捷方式。
+2. 安装后从开始菜单打开 Joint2STL，再用“导入 DICOM”或“打开项目”选择你自己的数据。软件不带示例 CT、MRI、工程或 STL。安装包含 0.4.4 的 MRI 侧栏修复和 Windows 中文路径兼容修复。
+3. 运行不需要另装 Python 或完整 CUDA Toolkit。NVIDIA 加速需要兼容的 NVIDIA 显卡和驱动；没有可用 GPU 时可以运行 CPU 路径。可在“工具 → 硬件与计算后端”查看。
+4. 建议预留至少 12 GB 的可用磁盘空间（包含安装目录与临时空间）。可从 Windows“设置 → 应用 → 已安装的应用”卸载。CT、MRI 和 .j2stl 工程建议保存在独立数据文件夹。
+
+安装器未添加发布者代码签名。可用附带的 SHA256SUMS.txt 核对安装文件。第三方许可证和模型来源信息随程序保留；SegmentAnyBone 使用 CC BY-NC 4.0。

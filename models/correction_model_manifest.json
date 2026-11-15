@@ -1,0 +1,10 @@
+{
+  "model": "ScribblePrompt-UNet v1",
+  "file": "scribbleprompt_unet.pth",
+  "bytes": 15977486,
+  "sha256": "43f57ee8fa8ec529c31be281e06749f9e629b30157bbbcc9baf200cddec1acbe",
+  "url": "https://huggingface.co/spaces/halleewong/ScribblePrompt/resolve/706d6559618e5f1104565a6a19c9ea069fca7454/checkpoints/ScribblePrompt_unet_v1_nf192_res128.pt",
+  "license": "Apache-2.0; official author Space release",
+  "semantics": "prompt-assisted segmentation; no trained bone-name or ACL/PCL classification",
+  "local_only": true
+}

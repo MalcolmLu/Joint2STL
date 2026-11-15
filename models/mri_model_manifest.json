@@ -1,0 +1,33 @@
+{
+  "model": "SegmentAnyBone",
+  "architecture": "TinyViT vit_t, 1024 input, SAM decoder with two semantic masks",
+  "architecture_source": "https://github.com/mazurowski-lab/SegmentAnyBone",
+  "code_commit": "782b22140c17913317cbbbbf392deda14cfbbe4a",
+  "checkpoint_source": "https://raw.githubusercontent.com/mazurowski-lab/SlicerSegmentHumanBody/5f026279291d2980a01274a0d0aaa6c1a4d68960/SegmentHumanBody/models/bone_sam.pth",
+  "checkpoint_commit": "5f026279291d2980a01274a0d0aaa6c1a4d68960",
+  "checkpoint_filename": "bone_sam.pth",
+  "checkpoint_bytes": 46221025,
+  "checkpoint_sha256": "43209385a63290f7a10bb80eb1bbb47186abd64c73f507b3fcae6d11542e1d49",
+  "license": "CC BY-NC 4.0",
+  "license_reference": "https://github.com/mazurowski-lab/SegmentAnyBone/blob/782b22140c17913317cbbbbf392deda14cfbbe4a/LICENSE.md",
+  "upstream_notices": [
+    "SAM/Meta Apache-2.0",
+    "TinyViT/Microsoft MIT"
+  ],
+  "safe_loading": "torch.load(map_location='cpu', weights_only=True); load_state_dict(strict=True)",
+  "inference": "Slicer-style native slices; raw MR min/max to RGB uint8, SAM longest-side resize/pad, output masks[1] > 0; no VNet depth attention",
+  "semantics": "Binary bone/background only; anatomical names are unreviewed physical geometry candidates",
+  "training": "Official pretrained model; no clinical upload, local training, or patient-specific fitting",
+  "trained_adapters": {
+    "encoder_enabled": true,
+    "encoder_depths": [
+      0,
+      1,
+      10,
+      11
+    ],
+    "decoder_enabled": true,
+    "decoder_depth": 2
+  },
+  "strict_checkpoint_tensor_keys": 528
+}
